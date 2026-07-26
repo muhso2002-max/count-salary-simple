@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Gaji</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Kalkulator Gaji</h1>
+    <div class="container">
 
-    <div class="gp">
-        <p>Gaji Pokok</p>
-        <h2>Rp5.941.759</h2>
+        <h1>💰 Kalkulator Gaji</h1>
+
+        <div class="card">
+
+            <label>Gaji Pokok</label>
+            <input type="number" id="gaji" value="5941759">
+
+            <label>Tarif Lembur Hari Kerja (per hari)</label>
+            <input type="number" id="tarifKerja" value="189059">
+
+            <label>Jumlah Lembur Hari Kerja</label>
+            <input type="number" id="jumlahKerja" value="0">
+
+            <label>Tarif Lembur Hari Libur (per hari)</label>
+            <input type="number" id="tarifLibur" value="549989">
+
+            <label>Jumlah Lembur Hari Libur</label>
+            <input type="number" id="jumlahLibur" value="0">
+
+            <label>Bonus</label>
+            <input type="number" id="bonus" value="0">
+
+            <button onclick="hitung()">Hitung</button>
+
+        </div>
+
+        <div class="hasil">
+
+            <h2>Hasil Perhitungan</h2>
+
+            <p>
+                <span>Gaji Pokok</span>
+                <span id="hGaji">Rp0</span>
+            </p>
+
+            <p>
+                <span>Lembur Hari Kerja</span>
+                <span id="hKerja">Rp0</span>
+            </p>
+
+            <p>
+                <span>Lembur Hari Libur</span>
+                <span id="hLibur">Rp0</span>
+            </p>
+
+            <p>
+                <span>Bonus</span>
+                <span id="hBonus">Rp0</span>
+            </p>
+
+            <hr>
+
+            <h2>Penghasilan Bruto</h2>
+
+            <h1 id="bruto">Rp0</h1>
+
+        </div>
+
     </div>
 
-    <label>Lembur Hari Kerja</label>
-    <input type="number" id="kerja" placeholder="Contoh: 14">
-
-    <label>Lembur Hari Libur</label>
-    <input type="number" id="libur" placeholder="Contoh: 2">
-
-    <label>Bonus</label>
-    <input type="number" id="bonus" placeholder="0">
-
-    <button onclick="hitung()">Hitung</button>
-
-    <div class="hasil">
-        <h3>Penghasilan Bruto</h3>
-        <h1 id="total">Rp0</h1>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
