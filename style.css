@@ -1,52 +1,47 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+function formatRupiah(angka) {
+    return "Rp" + Number(angka).toLocaleString("id-ID");
 }
 
-body{
-    background:#121212;
-    color:white;
-    padding:20px;
+function hitung() {
+
+    const gaji = Number(document.getElementById("gaji").value) || 0;
+
+    const tarifKerja = Number(document.getElementById("tarifKerja").value) || 0;
+    const jumlahKerja = Number(document.getElementById("jumlahKerja").value) || 0;
+
+    const tarifLibur = Number(document.getElementById("tarifLibur").value) || 0;
+    const jumlahLibur = Number(document.getElementById("jumlahLibur").value) || 0;
+
+    const bonus = Number(document.getElementById("bonus").value) || 0;
+
+    const totalKerja = tarifKerja * jumlahKerja;
+    const totalLibur = tarifLibur * jumlahLibur;
+
+    const bruto = gaji + totalKerja + totalLibur + bonus;
+
+    document.getElementById("hGaji").innerHTML =
+        formatRupiah(gaji);
+
+    document.getElementById("hKerja").innerHTML =
+        jumlahKerja + " × " +
+        formatRupiah(tarifKerja) +
+        "<br><b>= " +
+        formatRupiah(totalKerja) +
+        "</b>";
+
+    document.getElementById("hLibur").innerHTML =
+        jumlahLibur + " × " +
+        formatRupiah(tarifLibur) +
+        "<br><b>= " +
+        formatRupiah(totalLibur) +
+        "</b>";
+
+    document.getElementById("hBonus").innerHTML =
+        formatRupiah(bonus);
+
+    document.getElementById("bruto").innerHTML =
+        formatRupiah(bruto);
+
 }
 
-.container{
-    max-width:500px;
-    margin:auto;
-}
-
-h1{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.card,
-.hasil{
-    background:#1f1f1f;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-label{
-    display:block;
-    margin-top:15px;
-    margin-bottom:8px;
-    font-weight:bold;
-}
-
-input{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#2d2d2d;
-    color:white;
-    font-size:16px;
-    outline:none;
-}
-
-input:focus{
-    border:
+window.onload = hitung;
