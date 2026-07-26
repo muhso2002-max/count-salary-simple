@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gaji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>Kalkulator Gaji</h1>
+
+    <div class="gp">
+        <p>Gaji Pokok</p>
+        <h2>Rp5.941.759</h2>
+    </div>
+
+    <label>Lembur Hari Kerja</label>
+    <input type="number" id="kerja" placeholder="Contoh: 14">
+
+    <label>Lembur Hari Libur</label>
+    <input type="number" id="libur" placeholder="Contoh: 2">
+
+    <label>Bonus</label>
+    <input type="number" id="bonus" placeholder="0">
+
+    <button onclick="hitung()">Hitung</button>
+
+    <div class="hasil">
+        <h3>Penghasilan Bruto</h3>
+        <h1 id="total">Rp0</h1>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
